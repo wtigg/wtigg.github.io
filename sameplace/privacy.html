@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Same Place Privacy Policy</title>
-<meta name="description" content="Same Place privacy policy. Your photos never leave your phone. Only anonymized coordinates and timestamps are compared.">
+<meta name="description" content="Same Place privacy policy. Your photos never leave your phone. Only the places and times of your photos are shared, with the person you invite.">
 <style>
   :root { --accent:#FF6B5B; --bg:#FFF8EE; --ink:#141414; --muted:#6B6B6B; }
   body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
@@ -16,51 +16,97 @@
   p, li { color:#26242F; }
   ul { padding-left:22px; }
   .card { background:#fff; border:3px solid var(--ink); border-radius:20px; padding:4px 24px 22px; box-shadow:6px 6px 0 var(--ink); margin-top:24px; }
+  [data-lang] { display:none; }
+  html[lang="fr"] [data-lang="fr"], html[lang="en"] [data-lang="en"] { display:block; }
+  .switch { float:right; font-weight:700; }
+  .switch a { color:var(--accent); text-decoration:none; margin-left:10px; cursor:pointer; }
 </style>
 </head>
 <body>
   <div class="wrap">
     <a class="back" href="index.html">&larr; Same Place</a>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: September 17, 2026</p>
+    <span class="switch"><a onclick="document.documentElement.lang='fr'">FR</a><a onclick="document.documentElement.lang='en'">EN</a></span>
 
+  <div data-lang="fr">
+    <h1>Politique de confidentialité</h1>
+    <p class="updated">Dernière mise à jour : 25 septembre 2026</p>
     <div class="card">
-    <h2>The short version</h2>
-    <p>Same Place never uploads your photos. It reads only two pieces of metadata from them &mdash; when the photo was taken and roughly where &mdash; and compares those points with the person you paired with. There is no account, no email, and no sign-in.</p>
-
-    <h2>What the app reads</h2>
-    <p>With your permission, Same Place reads the creation date and the GPS coordinates stored in your photo library's metadata. It does not read, copy, upload, or analyze the image content of your photos. Photo files stay on your device at all times.</p>
-
-    <h2>What is shared with your pair</h2>
-    <p>When you link with someone, each device uploads a list of points to our database, and each point holds only a latitude, a longitude, a timestamp, and a random device identifier. That list is scoped to the pair you created. Nothing in it identifies you by name, email, or Apple Account, and no photo, thumbnail, or filename is ever sent.</p>
-
-    <h2>Your identity</h2>
-    <p>Same Place does not use accounts. On first launch the app generates a random identifier that lives only on your device and in the pairs you join. A first name and a home city are optional, stored locally, and used purely to label things inside the app.</p>
-
-    <h2>Where the data lives</h2>
-    <p>Pair records and the anonymized points are stored on Supabase, our database provider, on servers in the European Union. Matches, connections, and settings are also cached on your device. Deleting the app removes the local copy.</p>
-
-    <h2>Deleting your data</h2>
-    <p>Email <a href="mailto:paul@rocapine.com">paul@rocapine.com</a> with the pair code shown in the app and we will delete that pair and every point attached to it. Because the app holds no account, that code is the only way to identify your data.</p>
-
-    <h2>Purchases</h2>
-    <p>Subscriptions are handled by Apple and by RevenueCat, our subscription infrastructure provider. RevenueCat processes a random app-generated identifier and your purchase receipt in order to unlock premium features. It receives no photo data and no location data.</p>
-
-    <h2>Location permission</h2>
-    <p>If you choose to set your home city from your current position, the app uses your location once for that purpose. Same Place does not track your location in the background.</p>
-
-    <h2>No trackers</h2>
-    <p>Same Place contains no advertising SDKs and no third-party analytics that profile you.</p>
-
-    <h2>Children</h2>
-    <p>Same Place is not directed at children under 13. We do not knowingly collect personal information from children.</p>
-
-    <h2>Changes</h2>
-    <p>If this policy changes, we will update this page and the date above.</p>
-
-    <h2>Contact</h2>
-    <p>Questions about privacy? Email <a href="mailto:paul@rocapine.com">paul@rocapine.com</a>.</p>
+    <h2>En bref</h2>
+    <p>Same Place n'envoie jamais tes photos. L'app lit seulement quand et où elles ont été prises, et partage ces lieux et ces heures avec la personne que tu invites, et elle seule. Pas de compte, pas d'e-mail, pas de connexion.</p>
+    <h2>Responsable du traitement</h2>
+    <p>Paul Soubigou, éditeur de Same Place. Contact : <a href="mailto:paul@rocapine.com">paul@rocapine.com</a>.</p>
+    <h2>Ce que l'app lit</h2>
+    <p>Avec ton autorisation, Same Place lit la date de création et les coordonnées GPS enregistrées dans ta photothèque (photos et vidéos). Elle ne lit, ne copie, n'envoie et n'analyse jamais le contenu des images.</p>
+    <h2>Ce qui est envoyé, et à qui</h2>
+    <ul>
+      <li><strong>Tes lieux et heures</strong> : les photos sont regroupées par lieu (environ 100 m) et par demi-heure. Chaque regroupement contient une latitude et une longitude arrondies à environ 11 m, une heure de début et de fin, et un nombre de photos. Ces données permettent de retrouver des lieux précis ; elles ne sont visibles que par la personne à qui tu es relié·e.</li>
+      <li><strong>Ton prénom</strong>, tel que tu le saisis, montré à cette personne.</li>
+      <li><strong>Un identifiant aléatoire</strong> créé par l'app et gardé dans le trousseau de ton iPhone. Nos serveurs n'en stockent qu'une empreinte chiffrée.</li>
+      <li><strong>Ta date de rencontre</strong>, si tu la donnes, pour ignorer ce qui s'est passé après.</li>
+    </ul>
+    <p>Rien n'est envoyé tant que personne n'a rejoint ton invitation. Aucune image, miniature ni nom de fichier n'est jamais transmis.</p>
+    <h2>Pourquoi, et sur quelle base</h2>
+    <p>Uniquement pour fournir le service que tu demandes : trouver où vos chemins se sont croisés. Base légale : l'exécution du service (article 6.1.b du RGPD) et ton consentement à l'accès aux photos, que tu peux retirer à tout moment dans les réglages d'iOS.</p>
+    <h2>Où et combien de temps</h2>
+    <p>Les données sont hébergées par Supabase, sur des serveurs dans l'Union européenne (Paris). Une invitation sans réponse est supprimée après 7 jours, une connexion inactive après 18 mois, un exemple de démonstration après 2 jours.</p>
+    <h2>Supprimer tes données</h2>
+    <p>Dans l'app : <strong>Connexion &gt; Se déconnecter</strong> supprime la connexion et tous ses lieux, pour vous deux. <strong>Réglages &gt; Supprimer mes données</strong> efface tout ce qui te concerne sur nos serveurs. Tu peux aussi écrire à <a href="mailto:paul@rocapine.com">paul@rocapine.com</a> avec le code de connexion affiché dans les Réglages.</p>
+    <h2>Noms de lieux</h2>
+    <p>Pour afficher le nom d'un lieu, l'app interroge le service de géocodage d'Apple avec les coordonnées du croisement concerné.</p>
+    <h2>Achats</h2>
+    <p>Les abonnements passent par Apple et par RevenueCat, notre prestataire d'abonnements, qui traite l'identifiant aléatoire de l'app et ton reçu d'achat. Quand tu es abonné·e, nos serveurs vérifient ton abonnement auprès de RevenueCat pour en faire profiter la personne à qui tu es relié·e. RevenueCat ne reçoit aucune photo ni aucun lieu.</p>
+    <h2>Pas de traqueurs</h2>
+    <p>Aucune publicité, aucun outil d'analyse tiers, aucun suivi entre apps.</p>
+    <h2>Tes droits</h2>
+    <p>Accès, rectification, effacement, portabilité, opposition : écris à <a href="mailto:paul@rocapine.com">paul@rocapine.com</a>. Tu peux aussi saisir la CNIL (cnil.fr).</p>
+    <h2>Enfants</h2>
+    <p>Same Place ne s'adresse pas aux moins de 13 ans.</p>
+    <h2>Modifications</h2>
+    <p>En cas de changement, cette page et la date ci-dessus sont mises à jour.</p>
     </div>
   </div>
+
+  <div data-lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: September 25, 2026</p>
+    <div class="card">
+    <h2>The short version</h2>
+    <p>Same Place never uploads your photos. The app reads only when and where they were taken, and shares those places and times with the person you invite, and no one else. No account, no email, no sign-in.</p>
+    <h2>Controller</h2>
+    <p>Paul Soubigou, publisher of Same Place. Contact: <a href="mailto:paul@rocapine.com">paul@rocapine.com</a>.</p>
+    <h2>What the app reads</h2>
+    <p>With your permission, Same Place reads the creation date and GPS coordinates stored in your photo library (photos and videos). It never reads, copies, uploads or analyses image content.</p>
+    <h2>What is sent, and to whom</h2>
+    <ul>
+      <li><strong>Your places and times</strong>: photos are grouped by place (about 100 m) and half-hour. Each group holds a latitude and longitude rounded to about 11 m, a start and end time, and a photo count. This data can reveal precise places; it is visible only to the person you are connected to.</li>
+      <li><strong>Your first name</strong>, as you enter it, shown to that person.</li>
+      <li><strong>A random identifier</strong> created by the app and kept in your iPhone's Keychain. Our servers store only a hash of it.</li>
+      <li><strong>The date you met</strong>, if you give it, to ignore what happened afterwards.</li>
+    </ul>
+    <p>Nothing is sent until someone has joined your invitation. No image, thumbnail or filename is ever transmitted.</p>
+    <h2>Why, and on what basis</h2>
+    <p>Only to provide the service you ask for: finding where your paths crossed. Legal basis: performance of the service (GDPR art. 6.1.b) and your consent to photo access, which you can withdraw at any time in iOS Settings.</p>
+    <h2>Where, and for how long</h2>
+    <p>Data is hosted by Supabase on servers in the European Union (Paris). An unanswered invitation is deleted after 7 days, an inactive connection after 18 months, a demo example after 2 days.</p>
+    <h2>Deleting your data</h2>
+    <p>In the app: <strong>Connection &gt; Disconnect</strong> deletes the connection and all its places, for both of you. <strong>Settings &gt; Delete my data</strong> erases everything about you on our servers. You can also email <a href="mailto:paul@rocapine.com">paul@rocapine.com</a> with the connection code shown in Settings.</p>
+    <h2>Place names</h2>
+    <p>To show a place's name, the app queries Apple's geocoding service with the coordinates of that crossing.</p>
+    <h2>Purchases</h2>
+    <p>Subscriptions go through Apple and RevenueCat, our subscription provider, which processes the app's random identifier and your receipt. When you subscribe, our servers check your subscription with RevenueCat so the person you are connected to can enjoy it too. RevenueCat receives no photos and no places.</p>
+    <h2>No trackers</h2>
+    <p>No ads, no third-party analytics, no cross-app tracking.</p>
+    <h2>Your rights</h2>
+    <p>Access, rectification, erasure, portability, objection: email <a href="mailto:paul@rocapine.com">paul@rocapine.com</a>. You may also complain to your data protection authority.</p>
+    <h2>Children</h2>
+    <p>Same Place is not directed at children under 13.</p>
+    <h2>Changes</h2>
+    <p>If this policy changes, this page and the date above are updated.</p>
+    </div>
+  </div>
+  </div>
+  <script>
+    document.documentElement.lang = (navigator.language || 'en').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+  </script>
 </body>
 </html>
