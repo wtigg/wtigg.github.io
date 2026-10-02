@@ -3,60 +3,119 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MogMeter — Politique de confidentialité</title>
+<title>MogMeter — Politique de confidentialité / Privacy Policy</title>
 <meta name="description" content="Politique de confidentialité de MogMeter. Tes photos sont analysées puis supprimées immédiatement, jamais stockées ni utilisées pour entraîner un modèle.">
 <style>
   :root { --accent:#4FFFB0; --bg:#0A0E0C; --card:#131815; --ink:#FFFFFF; --muted:#8A928C; }
   body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
   .wrap { max-width:720px; margin:0 auto; padding:56px 24px 80px; }
   a.back { color:var(--accent); text-decoration:none; font-weight:600; }
+  .lang { float:right; font-weight:600; }
+  .lang a { text-decoration:none; margin-left:12px; }
   h1 { font-size:34px; letter-spacing:-.02em; margin:24px 0 4px; }
   .updated { color:var(--muted); margin:0 0 32px; }
   h2 { font-size:21px; margin:34px 0 8px; }
   p, li { color:#D6DBD8; }
   a { color:var(--accent); }
   .card { background:var(--card); border-radius:16px; padding:4px 24px 20px; margin-top:24px; }
+  hr { border:0; border-top:1px solid #222a25; margin:64px 0 0; }
 </style>
 </head>
 <body>
   <div class="wrap">
     <a class="back" href="index.html">&larr; MogMeter</a>
+    <span class="lang"><a href="#fr">FR</a><a href="#en">EN</a></span>
+    <section id="fr" lang="fr">
     <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : 18 septembre 2026</p>
+    <p class="updated">Dernière mise à jour : 2 octobre 2026</p>
 
     <div class="card">
-    <h2>En bref</h2>
-    <p>MogMeter analyse les photos de ton visage pour te donner une évaluation esthétique et un plan d'amélioration. Cette analyse a besoin d'un serveur : tes photos sont envoyées, analysées, puis supprimées immédiatement. Elles ne sont jamais conservées, jamais associées à ton identité, et jamais utilisées pour entraîner un modèle.</p>
+      <h2>En bref</h2>
+      <p>MogMeter analyse les photos de ton visage pour te donner une évaluation esthétique et un plan d'amélioration. Tes photos sont envoyées, analysées par l'IA Google Gemini, puis supprimées immédiatement. Elles ne sont jamais conservées, jamais associées à ton identité, et jamais utilisées pour entraîner un modèle. Pas de compte, pas d'e-mail, pas de publicité, pas de traçage.</p>
+    </div>
 
-    <h2>Ce que l'app envoie</h2>
-    <p>Quand tu lances un scan, l'app transmet à notre serveur :</p>
+    <h2>Responsable du traitement</h2>
+    <p>MogMeter est édité par Paul Soubigou, développeur indépendant. Contact : <a href="mailto:soubigoupaul@gmail.com">soubigoupaul@gmail.com</a>.</p>
+
+    <h2>Ce que l'app envoie lors d'un scan</h2>
     <ul>
       <li>la ou les photos que tu viens de prendre ou de choisir, redimensionnées et compressées ;</li>
-      <li>le genre, la taille, le poids et l'âge que tu as indiqués pendant l'onboarding, qui servent à calibrer l'analyse ;</li>
-      <li>un identifiant aléatoire généré par ton appareil, qui sert uniquement à limiter les abus. Il ne contient ni ton nom, ni ton e-mail, ni ton numéro, et il change si tu réinstalles l'app.</li>
+      <li>le genre, l'âge et l'objectif que tu as indiqués pendant l'onboarding, qui servent à calibrer l'analyse ;</li>
+      <li>la langue de l'app, pour que la réponse soit dans ta langue ;</li>
+      <li>un identifiant technique aléatoire généré par ton appareil, qui sert uniquement à limiter les abus. Il ne contient ni ton nom, ni ton e-mail, ni ton numéro.</li>
     </ul>
 
     <h2>Ce qui arrive à tes photos</h2>
-    <p>Notre serveur transmet la photo au modèle d'analyse d'images de Google (Gemini) le temps de produire ton résultat, puis la jette. Ni nous ni Google ne la conservons, et elle n'est pas utilisée pour entraîner de modèle. Aucune photo n'est écrite dans une base de données ni dans un stockage de fichiers.</p>
+    <p>Notre serveur (Supabase, hébergé dans l'Union européenne) transmet la photo au modèle d'analyse d'images de Google (Gemini API) le temps de produire ton résultat, puis la jette. Aucune photo n'est écrite dans une base de données ni dans un stockage de fichiers. Selon les conditions de l'API Gemini payante, Google n'utilise pas ces contenus pour entraîner ses modèles. Les photos ne servent jamais à identifier qui tu es : il n'y a aucune reconnaissance faciale ni comparaison avec d'autres visages.</p>
+
+    <h2>Coach IA</h2>
+    <p>Quand tu écris au coach, l'app envoie ta conversation récente, ainsi qu'un résumé de ton profil (prénom si tu l'as donné, âge, genre, taille, poids, objectif, derniers scores) pour que les conseils soient adaptés. Ces données transitent par notre serveur vers Google Gemini pour générer la réponse, puis ne sont pas conservées côté serveur. L'historique de la conversation reste uniquement sur ton téléphone. N'écris pas d'informations sensibles dont tu n'as pas besoin pour ta question.</p>
 
     <h2>Ce qui reste sur ton téléphone</h2>
-    <p>Tes scores, ton historique de scans, ta progression, ton prénom et tes réponses d'onboarding sont stockés uniquement sur ton appareil. Nous n'y avons pas accès. « Effacer mes données » dans l'onglet Profil les supprime définitivement, et désinstaller l'app fait la même chose.</p>
-
-    <h2>Compte</h2>
-    <p>MogMeter ne demande aucun compte, aucune adresse e-mail et aucune connexion.</p>
+    <p>Tes scores, ton historique de scans, ta progression, ta conversation avec le coach, ton prénom et tes réponses d'onboarding sont stockés uniquement sur ton appareil. Nous n'y avons pas accès. « Effacer mes données » dans l'onglet Profil les supprime définitivement ; désinstaller l'app fait la même chose.</p>
 
     <h2>Abonnements</h2>
-    <p>Les abonnements sont gérés par Apple et par RevenueCat, notre prestataire d'infrastructure d'abonnement. RevenueCat traite un identifiant aléatoire généré par l'app et ton reçu d'achat. Il ne reçoit ni tes photos, ni tes résultats. Consulte les politiques de confidentialité d'<a href="https://www.apple.com/legal/privacy/">Apple</a> et de <a href="https://www.revenuecat.com/privacy">RevenueCat</a> pour le détail.</p>
+    <p>Les paiements sont gérés par Apple. RevenueCat, notre prestataire d'infrastructure d'abonnement, traite un identifiant aléatoire généré par l'app et ton reçu d'achat pour savoir si ton abonnement est actif. Il ne reçoit ni tes photos, ni tes résultats, ni tes messages. Voir les politiques de confidentialité d'<a href="https://www.apple.com/legal/privacy/">Apple</a> et de <a href="https://www.revenuecat.com/privacy">RevenueCat</a>.</p>
+
+    <h2>Base légale et transferts</h2>
+    <p>L'analyse de tes photos et le coach reposent sur ton consentement explicite, recueilli dans l'app avant ton premier scan ; tu peux arrêter à tout moment en n'utilisant plus ces fonctions. La gestion de l'abonnement repose sur l'exécution du contrat. Google et RevenueCat peuvent traiter des données hors de l'Union européenne, encadrés par les clauses contractuelles types de la Commission européenne et le Data Privacy Framework UE–États-Unis.</p>
 
     <h2>Âge minimum</h2>
-    <p>MogMeter est réservé aux personnes de 18 ans et plus. L'analyse refuse automatiquement les photos sur lesquelles la personne paraît mineure.</p>
+    <p>MogMeter est réservé aux personnes de 18 ans et plus. L'app demande ton âge et refuse l'accès en dessous de 18 ans ; l'analyse refuse aussi automatiquement les photos sur lesquelles la personne paraît mineure.</p>
 
     <h2>Tes droits</h2>
-    <p>Comme tes données restent sur ton appareil et que tes photos ne sont pas conservées, nous n'avons rien à te restituer ni à supprimer de notre côté. Tu gardes le contrôle total via « Effacer mes données » dans l'app. Pour toute question, écris-nous à l'adresse indiquée sur la <a href="support.html">page de support</a>.</p>
+    <p>Conformément au RGPD, tu disposes des droits d'accès, de rectification, d'effacement, d'opposition et de retrait du consentement. Comme tes données restent sur ton appareil et que tes photos et messages ne sont pas conservés sur nos serveurs, nous n'avons en pratique rien à te restituer ni à supprimer de notre côté. Pour toute question : <a href="mailto:soubigoupaul@gmail.com">soubigoupaul@gmail.com</a>. Tu peux aussi saisir la CNIL (<a href="https://www.cnil.fr">cnil.fr</a>).</p>
 
     <h2>Modifications</h2>
     <p>Si cette politique change, nous mettrons à jour cette page et la date ci-dessus.</p>
+    </section>
+
+    <hr>
+
+    <section id="en" lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 2, 2026</p>
+
+    <div class="card">
+      <h2>In short</h2>
+      <p>MogMeter analyzes photos of your face to give you an aesthetic assessment and an improvement plan. Your photos are sent, analyzed by Google Gemini AI, then deleted immediately. They are never stored, never linked to your identity and never used to train a model. No account, no email, no ads, no tracking.</p>
     </div>
+
+    <h2>Data controller</h2>
+    <p>MogMeter is published by Paul Soubigou, independent developer. Contact: <a href="mailto:soubigoupaul@gmail.com">soubigoupaul@gmail.com</a>.</p>
+
+    <h2>What the app sends when you scan</h2>
+    <ul>
+      <li>the photo(s) you just took or picked, resized and compressed;</li>
+      <li>the gender, age and goal you entered during onboarding, used to calibrate the analysis;</li>
+      <li>the app language, so the answer comes back in your language;</li>
+      <li>a random technical identifier generated by your device, used only to limit abuse. It contains no name, email or phone number.</li>
+    </ul>
+
+    <h2>What happens to your photos</h2>
+    <p>Our server (Supabase, hosted in the European Union) forwards the photo to Google's image model (Gemini API) just long enough to produce your result, then discards it. No photo is ever written to a database or file storage. Under the paid Gemini API terms, Google does not use this content to train its models. Photos are never used to identify you: there is no facial recognition and no comparison with other faces.</p>
+
+    <h2>AI coach</h2>
+    <p>When you message the coach, the app sends your recent conversation plus a summary of your profile (first name if you gave one, age, gender, height, weight, goal, latest scores) so the advice fits you. This data passes through our server to Google Gemini to generate the reply and is not kept server-side. The chat history stays on your phone only. Don't share sensitive information you don't need for your question.</p>
+
+    <h2>What stays on your phone</h2>
+    <p>Your scores, scan history, progress, coach conversation, first name and onboarding answers are stored only on your device. We have no access to them. "Erase my data" in the Profile tab deletes them permanently; uninstalling the app does the same.</p>
+
+    <h2>Subscriptions</h2>
+    <p>Payments are handled by Apple. RevenueCat, our subscription infrastructure provider, processes a random app-generated identifier and your purchase receipt to know whether your subscription is active. It never receives your photos, results or messages. See the privacy policies of <a href="https://www.apple.com/legal/privacy/">Apple</a> and <a href="https://www.revenuecat.com/privacy">RevenueCat</a>.</p>
+
+    <h2>Legal basis and transfers</h2>
+    <p>Photo analysis and the coach rely on your explicit consent, collected in the app before your first scan; you can stop at any time by no longer using these features. Subscription management relies on the performance of the contract. Google and RevenueCat may process data outside the European Union under the European Commission's Standard Contractual Clauses and the EU–US Data Privacy Framework.</p>
+
+    <h2>Minimum age</h2>
+    <p>MogMeter is for people aged 18 and over. The app asks for your age and blocks access under 18; the analysis also automatically rejects photos where the person appears to be a minor.</p>
+
+    <h2>Your rights</h2>
+    <p>Under the GDPR and similar laws (including the CCPA), you have the right to access, rectify, erase, object and withdraw consent. Since your data stays on your device and your photos and messages are not kept on our servers, in practice there is nothing for us to return or delete. Questions: <a href="mailto:soubigoupaul@gmail.com">soubigoupaul@gmail.com</a>. You may also contact your data protection authority.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we will update this page and the date above.</p>
+    </section>
   </div>
 </body>
 </html>
