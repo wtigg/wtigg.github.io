@@ -1,0 +1,13 @@
+:root { --bg: #14171A; --raised: #1C2024; --line: #2E353B; --neon: #D9F0E6; --soft: rgba(217,240,230,.66); --kraft: #B8925A; --red: #C8312B; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--neon); font: 17px/1.6 "IBM Plex Sans Condensed", system-ui, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
+h1 { font-family: "Special Elite", Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-family: "Special Elite", Georgia, serif; font-weight: 400; font-size: 22px; margin: 40px 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
+p, li { color: var(--neon); }
+.meta { color: var(--soft); font-family: "IBM Plex Mono", monospace; font-size: 13px; }
+a { color: var(--kraft); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--line); }
+th { color: var(--soft); font-weight: 500; }
+nav { margin-top: 48px; color: var(--soft); font-size: 15px; }

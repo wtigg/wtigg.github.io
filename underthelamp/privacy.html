@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans+Condensed:wght@400;500&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Under the Lamp: Privacy</title>
+</head>
+<body><main>
+<h1>Privacy policy</h1>
+<p class="meta">Under the Lamp · effective November 4, 2026</p>
+
+<p>Under the Lamp is an interrogation game. You don't create an account, and we never ask for your name, email address or phone number. There are no ads, no analytics and no tracking across apps or websites.</p>
+
+<h2>What leaves your iPhone, and why</h2>
+<table>
+<tr><th>Data</th><th>Why</th><th>Who processes it</th><th>Kept for</th></tr>
+<tr><td>The questions you type or dictate, the evidence you show, and the suspects' replies</td><td>To write each suspect's reply and keep the interrogation consistent</td><td>Our server (Supabase), and Google Gemini to generate the reply</td><td>30 days on our server, then deleted</td></tr>
+<tr><td>A random ID created for this iPhone</td><td>To count cases per device (fair-use limit of 60 a month) and stop abuse</td><td>Our server, stored only as a salted one-way hash</td><td>30 days with the interrogation</td></tr>
+<tr><td>Your anonymous purchase ID (created by RevenueCat, no personal details)</td><td>To check a subscription, give the free case once, and tie an interrogation to you</td><td>RevenueCat; our server stores only a salted one-way hash</td><td>30 days on our server; RevenueCat per its own policy</td></tr>
+<tr><td>Your IP address</td><td>Rate limits against abuse</td><td>Our server, as a hashed counter key</td><td>Up to 24 hours</td></tr>
+<tr><td>Replies you report</td><td>To review content flagged with "Report this reply"</td><td>Our server</td><td>30 days</td></tr>
+<tr><td>Purchases</td><td>Subscriptions and free trials</td><td>Apple and RevenueCat</td><td>Per their policies</td></tr>
+</table>
+
+<h2>Google Gemini</h2>
+<p>Suspects answer through Google Gemini, an AI service operated by Google. For each question we send Google the question, the last few exchanges with that suspect, and the parts of the written case file the suspect may know. We do not send your purchase ID, device ID or IP address to Google. The app asks for your consent before the first interrogation, and you can withdraw it in Settings. Google processes this data under the <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>.</p>
+
+<h2>Voice</h2>
+<p>If you ask questions out loud, speech is turned into text on your iPhone by Apple's on-device recognition. The audio never leaves the device. Only the text you choose to send is treated as above.</p>
+
+<h2>On your iPhone</h2>
+<p>Your grades, onboarding answers and settings stay on your iPhone. Settings › Reset case progress clears them; deleting the app removes them.</p>
+
+<h2>Your rights</h2>
+<p>You can ask us to access or delete the data linked to your purchase ID. Because we don't know who you are, include the Support ID shown in the app's Settings. Everything is deleted automatically after 30 days anyway. Under the GDPR you can also complain to your data protection authority.</p>
+
+<h2>Children</h2>
+<p>Under the Lamp is rated 13+ and is not directed at children under 13.</p>
+
+<h2>Contact</h2>
+<p>Paul Soubigou · <a href="mailto:soubigoupaul@gmail.com">soubigoupaul@gmail.com</a></p>
+<nav><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></nav>
+</main></body></html>
