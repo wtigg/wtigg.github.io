@@ -23,12 +23,13 @@ p, li { color:var(--soft); }
 <p class="updated">Last updated: November 4, 2026</p>
 
 <h2>The short version</h2>
-<p>Rankly has no account and no sign-in, no analytics and no advertising trackers. It stores the list of apps you watch, reads their public store listings, and sends you the changes it finds.</p>
+<p>Rankly has no account and no sign-in, no analytics and no advertising trackers. It stores the list of apps you watch or track, reads their public store listings and top charts, and sends you the changes it finds.</p>
 
 <h2>What our server stores about your device</h2>
 <ul>
 <li>A random identifier created by the app on your device. It is not linked to your name, email or Apple ID.</li>
 <li>The public IDs of your app and the rival apps you watch, and the storefronts (countries) you chose.</li>
+<li>The public IDs of the apps you track in Ranks, their platform (iPhone or Mac) and whether rank alerts are on.</li>
 <li>If you allow notifications: your Apple push token and its environment, and which kinds of notifications you want.</li>
 <li>Your device language and time zone, to write notifications and to send the Monday memo at 8 am your time.</li>
 <li>Whether you have Rankly Pro. This is confirmed with RevenueCat, never taken from the app alone.</li>
@@ -36,12 +37,15 @@ p, li { color:var(--soft); }
 </ul>
 
 <h2>Public listing data</h2>
-<p>Rankly reads public store data published by Apple: app names, subtitles, descriptions, screenshots (as small thumbnails), prices, versions and release notes, languages, ratings and public customer reviews. Every item is attributed to its app and links to its public listing. Rankly is not affiliated with Apple.</p>
+<p>Rankly reads public store data published by Apple: app names, subtitles, descriptions, screenshots (as small thumbnails), prices, versions and release notes, languages, top chart positions, ratings and public customer reviews. Every item is attributed to its app and links to its public listing. Rankly is not affiliated with Apple.</p>
 <p>Public reviews are stored to group them into themes and translate them. We do not store reviewers' names: only a salted, one-way pseudonym, used to avoid counting the same review twice. If you wrote a review and want it removed from Rankly, write to us with a link to it and we will delete it within 30 days. We rely on legitimate interest (market analysis for app developers) for this processing; you can object at any time through the same address.</p>
 
 <h2>AI processing</h2>
 <!-- VERIFY before publishing: GEMINI_API_KEY must belong to a billed Google Cloud project (unpaid tier allows product improvement use). -->
 <p>To summarize listing changes, read screenshots, group reviews into themes, translate reviews and draft replies, Rankly sends public listing text, screenshot thumbnails and public review text to Google's Gemini API, on a paid project under Google's API terms, which do not allow Google to use this content to train its models. We never send your device identifier or push token to Google.</p>
+
+<h2>On your device and in your iCloud</h2>
+<p>Display settings, pinned countries and ranking preferences stay on your device and sync between your devices through your own iCloud account (key-value storage). We cannot read them.</p>
 
 <h2>Purchases</h2>
 <p>Payments are processed by Apple. RevenueCat checks your subscription status; it receives the random app identifier and your purchase receipts from Apple, never your payment details. See <a href="https://www.revenuecat.com/privacy">RevenueCat's privacy policy</a>.</p>
@@ -61,7 +65,7 @@ p, li { color:var(--soft); }
 <ul>
 <li>No selling or sharing of data with advertisers or data brokers.</li>
 <li>No tracking across apps or websites.</li>
-<li>No access to your contacts, location, photos or camera.</li>
+<li>No access to your contacts, location or camera. Rankly can add a share card to your Photos when you ask; it cannot read your library.</li>
 </ul>
 
 <h2>Your rights and contact</h2>
