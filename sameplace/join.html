@@ -2,95 +2,174 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Same Place — invitation</title>
-<meta name="description" content="Someone invited you to Same Place. / Quelqu'un t'invite sur Same Place.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Same Place · Invitation</title>
+<meta name="description" content="Et si vos chemins s'étaient déjà croisés ? Ouvre l'invitation dans Same Place. / Did your paths cross before you met? Open the invite in Same Place.">
+<meta name="theme-color" content="#EEF0F7">
 <meta name="apple-itunes-app" id="banner" content="app-id=6813341137">
+<link rel="icon" type="image/png" href="assets/icon-256.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Same Place">
+<meta property="og:title" content="Same Place · Et si vos chemins s'étaient déjà croisés ?">
+<meta property="og:description" content="Tu es invité·e à découvrir où vos chemins se sont croisés. / You're invited to find out where your paths crossed.">
+<meta property="og:url" content="https://wtigg.github.io/sameplace/join.html">
+<meta property="og:image" content="https://wtigg.github.io/sameplace/assets/og-invite.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Same Place : deux chemins qui se croisent sur un plan jaune">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Same Place · Et si vos chemins s'étaient déjà croisés ?">
+<meta name="twitter:description" content="Tu es invité·e à découvrir où vos chemins se sont croisés. / You're invited to find out where your paths crossed.">
+<meta name="twitter:image" content="https://wtigg.github.io/sameplace/assets/og-invite.png">
 <style>
-  :root { --accent:#FA5C5C; --yellow:#FFD23F; --bg:#EEF0F7; --ink:#17171A; --muted:#6B6B78; }
-  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-         color:var(--ink); background:var(--bg); line-height:1.55; }
-  .wrap { max-width:560px; margin:0 auto; padding:48px 20px 72px; text-align:center; }
-  h1 { font-size:34px; letter-spacing:-.03em; margin:0 0 10px; font-weight:900; }
-  p.lede { color:var(--muted); font-size:18px; margin:0 0 28px; }
-  .card { background:#fff; border:3px solid var(--ink); border-radius:22px;
-          padding:24px 20px; box-shadow:7px 7px 0 var(--ink); margin-bottom:26px; }
-  .label { font-size:13px; font-weight:900; letter-spacing:.14em; color:var(--muted); margin:0 0 8px; }
-  .code { font-size:40px; font-weight:900; letter-spacing:.14em; margin:0; font-variant-numeric:tabular-nums; }
-  .code.missing { font-size:20px; letter-spacing:0; color:var(--muted); font-weight:700; }
-  .btn { display:block; width:100%; box-sizing:border-box; background:var(--accent); color:#fff;
-         text-decoration:none; font-weight:900; font-size:18px; padding:16px 20px; border:3px solid var(--ink);
-         border-radius:18px; box-shadow:5px 5px 0 var(--ink); margin-bottom:14px; cursor:pointer; font-family:inherit; }
-  .btn.secondary { background:#fff; color:var(--ink); }
-  .note { font-size:15px; color:var(--muted); margin:6px 0 0; }
-  ol { text-align:left; color:#26242F; padding-left:22px; margin:26px 0 0; }
-  li { margin-bottom:8px; }
-  .foot { margin-top:34px; font-size:14px; color:var(--muted); }
-  .foot a { color:var(--accent); font-weight:700; text-decoration:none; }
+  :root { --yellow:#FFD23F; --street:#F2BE1E; --coral:#FA5C5C; --cream:#FFF6E2; --bg:#EEF0F7;
+          --ink:#17171A; --grey:#6E717E; --blue:#3B8AF7; --green:#4FE0C2;
+          --rounded: ui-rounded, "SF Pro Rounded", "Nunito", "Varela Round", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; font-family:var(--rounded); color:var(--ink); background:var(--bg); line-height:1.45;
+         -webkit-font-smoothing:antialiased; }
+  a { -webkit-tap-highlight-color:transparent; }
+
+  /* Top: just the app icon and its name. */
+  .brand { display:flex; align-items:center; gap:10px; max-width:520px; margin:0 auto;
+           padding:calc(18px + env(safe-area-inset-top)) 20px 0; }
+  .brand img { width:36px; height:36px; border-radius:9px; border:2.5px solid var(--ink); box-shadow:0 2px 0 var(--ink); }
+  .brand b { font-weight:900; font-size:19px; letter-spacing:-.01em; }
+
+  .wrap { max-width:520px; margin:0 auto; padding:26px 20px calc(40px + env(safe-area-inset-bottom)); }
+  h1 { font-size:clamp(30px, 8.6vw, 40px); line-height:1.08; letter-spacing:-.02em; margin:0 0 10px; font-weight:900; }
+  h1 em { font-style:normal; color:var(--coral); white-space:nowrap; }
+  .teaser { font-size:19px; font-weight:700; color:#3A3B44; margin:0 0 20px; }
+
+  .code-card { width:100%; display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer;
+               background:#fff; border:3px solid var(--ink); border-radius:22px; box-shadow:0 6px 0 var(--ink);
+               padding:16px 16px 14px; margin:0 0 24px; font:inherit; color:inherit; }
+  .code-card:active { transform:translateY(3px); box-shadow:0 3px 0 var(--ink); }
+  .label { font-size:12px; font-weight:900; letter-spacing:.16em; color:var(--grey); text-transform:uppercase; }
+  .code { display:inline-block; font-size:clamp(30px, 10vw, 42px); font-weight:900; letter-spacing:.14em;
+          padding:6px 6px 6px 20px; border-radius:14px; background:var(--yellow); border:3px solid var(--ink);
+          font-variant-numeric:tabular-nums; direction:ltr; }
+  .code.missing { font-size:18px; letter-spacing:0; padding:8px 14px; background:var(--bg); color:var(--grey); }
+  .copy-hint { font-size:14px; font-weight:800; color:var(--blue); }
+  .copy-hint.ok { color:#0E8F74; }
+
+  .btn { white-space:nowrap; display:flex; align-items:center; justify-content:center; gap:10px; width:100%; min-height:62px;
+         text-decoration:none; font-weight:900; font-size:clamp(15px, 4.6vw, 19px); padding:14px 16px; border:3px solid var(--ink);
+         border-radius:20px; box-shadow:0 6px 0 var(--ink); margin:0 0 16px; color:#fff; background:var(--coral);
+         text-transform:uppercase; letter-spacing:.02em; }
+  .btn:active { transform:translateY(3px); box-shadow:0 3px 0 var(--ink); }
+  .btn.secondary { background:#fff; color:var(--ink); font-size:17px; min-height:56px; }
+  .btn svg { flex:none; }
+  .note { font-size:15px; font-weight:700; color:#0E8F74; text-align:center; margin:-4px 0 14px; }
+
+  .steps { list-style:none; padding:0; margin:28px 0 0; display:grid; gap:12px; }
+  .steps li { counter-increment:s; display:flex; gap:12px; align-items:flex-start; font-size:16px; font-weight:600; color:#2A2B33; }
+  .steps li::before { content:counter(s); flex:none; width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
+                      background:var(--yellow); border:2.5px solid var(--ink); font-weight:900; font-size:15px; }
+  .foot { margin-top:30px; padding-top:18px; border-top:2px dashed #CDD0DB; font-size:14px; color:var(--grey);
+          text-align:center; font-weight:600; }
+  .foot a { color:var(--ink); font-weight:800; }
   [data-lang] { display:none; }
   html[lang="fr"] [data-lang="fr"], html[lang="en"] [data-lang="en"] { display:revert; }
+  html[lang="fr"] ol[data-lang="fr"], html[lang="en"] ol[data-lang="en"] { display:grid; counter-reset:s; }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1><span data-lang="fr">Tu es invité·e</span><span data-lang="en">You've been invited</span></h1>
-    <p class="lede">
-      <span data-lang="fr">Quelqu'un veut découvrir où vos chemins se sont croisés.</span>
-      <span data-lang="en">Someone wants to find out where your paths crossed.</span>
+  <header class="brand"><img src="assets/icon-256.png" alt="" width="36" height="36"><b>Same Place</b></header>
+
+  <main class="wrap">
+    <h1 id="title">
+      <span data-lang="fr">Tu es invité·e sur <em>Same Place</em></span>
+      <span data-lang="en">You're invited to <em>Same Place</em></span>
+    </h1>
+    <p class="teaser" id="teaser">
+      <span data-lang="fr">Et si vos chemins s'étaient déjà croisés, sans que vous le sachiez ?</span>
+      <span data-lang="en">What if your paths crossed before, without you knowing?</span>
     </p>
 
-    <div class="card">
-      <p class="label"><span data-lang="fr">TON CODE</span><span data-lang="en">YOUR CODE</span></p>
-      <p class="code missing" id="code">—</p>
-    </div>
+    <button class="code-card" id="codeCard" type="button">
+      <span class="label"><span data-lang="fr">Ton code d'invitation</span><span data-lang="en">Your invite code</span></span>
+      <span class="code missing" id="code">—</span>
+      <span class="copy-hint" id="copyHint" hidden><span data-lang="fr">Touche pour copier</span><span data-lang="en">Tap to copy</span></span>
+      <span class="copy-hint ok" id="copyOk" hidden><span data-lang="fr">Copié !</span><span data-lang="en">Copied!</span></span>
+    </button>
 
     <a class="btn" id="get" href="https://apps.apple.com/app/id6813341137">
-      <span data-lang="fr">Télécharger Same Place</span><span data-lang="en">Get Same Place</span>
-    </a>
-    <a class="btn secondary" id="open" href="sameplace://join">
-      <span data-lang="fr">J'ai déjà l'app : ouvrir</span><span data-lang="en">I have the app: open it</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-lang="fr">Télécharger Same Place</span><span data-lang="en">Download Same Place</span>
     </a>
     <p class="note" id="copied" hidden>
       <span data-lang="fr">Lien copié. Dans l'app, touche « Coller ».</span>
       <span data-lang="en">Link copied. In the app, tap “Paste”.</span>
     </p>
+    <a class="btn secondary" id="open" href="sameplace://join">
+      <span data-lang="fr">Ouvrir dans l'app</span><span data-lang="en">Open in the app</span>
+    </a>
 
-    <ol data-lang="fr">
+    <ol class="steps" data-lang="fr">
       <li>Installe Same Place sur ton iPhone.</li>
-      <li>Ouvre-la, réponds « Oui, j'ai un lien ou un code », puis touche <strong>Coller</strong>.</li>
-      <li>Ou reviens dans ton message et touche à nouveau le lien : il s'ouvrira dans l'app.</li>
+      <li>Ouvre-la, touche « J'ai un lien ou un code », puis « Coller ».</li>
+      <li>Ou reviens à ton message et touche à nouveau le lien : il s'ouvre dans l'app.</li>
     </ol>
-    <ol data-lang="en">
+    <ol class="steps" data-lang="en">
       <li>Install Same Place on your iPhone.</li>
-      <li>Open it, answer “Yes, I have a link or code”, then tap <strong>Paste</strong>.</li>
-      <li>Or go back to your message and tap the link again: it will open in the app.</li>
+      <li>Open it, tap “I have a link or code”, then “Paste”.</li>
+      <li>Or go back to your message and tap the link again: it opens in the app.</li>
     </ol>
 
     <p class="foot">
-      <span data-lang="fr">Tes photos ne quittent jamais ton téléphone. <a href="privacy.html">Confidentialité</a></span>
-      <span data-lang="en">Your photos never leave your phone. <a href="privacy.html">Privacy</a></span>
+      <span data-lang="fr">🔒 Tes photos ne quittent jamais ton téléphone. <a href="privacy.html">Confidentialité</a></span>
+      <span data-lang="en">🔒 Your photos never leave your phone. <a href="privacy.html">Privacy</a></span>
     </p>
-  </div>
+  </main>
 
   <script>
-    document.documentElement.lang = (navigator.language || 'en').toLowerCase().startsWith('fr') ? 'fr' : 'en';
-    const raw = new URLSearchParams(location.search).get('code');
-    const code = (raw || '').replace(/[^A-Za-z0-9]/g, '').toUpperCase().slice(0, 12);
-    if (code) {
-      const el = document.getElementById('code');
-      el.textContent = code;
-      el.classList.remove('missing');
-      document.getElementById('open').href = 'sameplace://join?code=' + code;
-      document.getElementById('banner').content =
-        'app-id=6813341137, app-argument=' + location.origin + location.pathname + '?code=' + code;
-      // Copy the link on the way to the App Store, so the app can paste it after install.
-      document.getElementById('get').addEventListener('click', () => {
-        const link = location.origin + location.pathname + '?code=' + code;
-        if (navigator.clipboard) navigator.clipboard.writeText(link).then(() => {
-          document.getElementById('copied').hidden = false;
-        }).catch(() => {});
-      });
+  (function () {
+    var fr = (navigator.language || 'en').toLowerCase().indexOf('fr') === 0;
+    document.documentElement.lang = fr ? 'fr' : 'en';
+    var q = new URLSearchParams(location.search);
+    var code = (q.get('code') || '').replace(/[^A-Za-z0-9]/g, '').toUpperCase().slice(0, 12);
+    // Optional, for later app versions: the inviter's first name (?from=Léa)
+    // and the kind of connection (?t=partner|friend|family). Shown as text only.
+    var from = (q.get('from') || '').trim().slice(0, 24);
+    var type = q.get('t');
+    var $ = function (id) { return document.getElementById(id); };
+    var link = code ? location.origin + location.pathname + '?code=' + code : '';
+
+    if (from) {
+      var h = $('title'); h.textContent = '';
+      h.appendChild(document.createTextNode(fr ? from + ' t’invite sur ' : from + ' invited you to '));
+      var em = document.createElement('em'); em.textContent = 'Same Place'; h.appendChild(em);
     }
+    var teasers = {
+      partner: ["Et si on s'était croisés avant de se rencontrer ?", "What if we crossed paths before we met?"],
+      friend:  ["Et si on s'était croisés avant de se connaître ?", "What if we crossed paths before we knew each other?"],
+      family:  ["Et si nos chemins s'étaient croisés sans qu'on le sache ?", "What if our paths crossed without us knowing?"]
+    };
+    if (teasers.hasOwnProperty(type)) $('teaser').textContent = teasers[type][fr ? 0 : 1];
+
+    function copy(text, done) {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done).catch(function () {});
+    }
+    if (code) {
+      var el = $('code'); el.textContent = code; el.classList.remove('missing');
+      $('copyHint').hidden = false;
+      $('open').href = 'sameplace://join?code=' + code;
+      $('banner').content = 'app-id=6813341137, app-argument=' + link;
+      $('codeCard').addEventListener('click', function () {
+        copy(code, function () {
+          $('copyHint').hidden = true; $('copyOk').hidden = false;
+          setTimeout(function () { $('copyOk').hidden = true; $('copyHint').hidden = false; }, 1500);
+        });
+      });
+      // Copy the link on the way to the App Store, so the app can paste it after install.
+      $('get').addEventListener('click', function () { copy(link, function () { $('copied').hidden = false; }); });
+    } else {
+      $('codeCard').style.cursor = 'default';
+    }
+  })();
   </script>
 </body>
 </html>
